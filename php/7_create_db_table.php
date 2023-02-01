@@ -14,15 +14,16 @@
 
     // creating a database
 
-    // $query = "CREATE DATABASE db2;";
-    // $test = mysqli_query($conn,$query);
+    // query for creating database named 'db2'
+    $query = "CREATE DATABASE db2;";
+    $test = mysqli_query($conn,$query); // executing the query
 
-    // if($test){
-    //     echo "Creating of db is succesful";
-    // }
-    // else{
-    //     echo "Failed to craete a db" . mysqli_error($conn);
-    // }
+    if($test){
+        echo "Creating of db is succesful";
+    }
+    else{
+        echo "Failed to craete a db" . mysqli_error($conn);
+    }
 
     // Deleting a database
 
@@ -42,9 +43,10 @@
     
     mysqli_select_db($conn,"db2") or die ("Failed to connect");
 
+    // query for creating table named 'mytable'
     $query = "CREATE TABLE `mytable` (`sno` INT NOT NULL AUTO_INCREMENT,`phone` INT NOT NULL , PRIMARY KEY (sno)); ";
 
-    $test = mysqli_query($conn,$query);
+    $test = mysqli_query($conn,$query); // executing the query
 
     if($test){
         echo "creation of table is succesful";
